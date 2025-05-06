@@ -8,10 +8,12 @@ This project uses the (COUGHVID dataset)[https://zenodo.org/records/4498364#.Yi8
   - For healthy samples: only save original audio
 - data_augmentation/2-melspectogram_augment.py: address class imbalance, enrich dataset, turn raw audio samples into melspectograms
   - For COVID-19 samples: generate one unaugmented spectogram and two augmented versions through frequency and time masking
-  - For healthy samples: generate one unaugmented spectogram and one augmented version through frequency and time masking
-Code in data_augmentation/1-pitch-shift.py and data_augmentation/2-melspectogram_augment.py adapted from (skanderhamdi/attention_cnn_lstm_covid_mel_spectrogram)[https://github.com/skanderhamdi/attention_cnn_lstm_covid_mel_spectrogram], with modifications for our project needs.
+  - For healthy samples: generate one unaugmented spectogram and one augmented version through frequency and time masking  
+Code in data_augmentation folder adapted from (skanderhamdi/attention_cnn_lstm_covid_mel_spectrogram)[https://github.com/skanderhamdi/attention_cnn_lstm_covid_mel_spectrogram], with modifications for our project needs.
 ## Models
-
+- cnn.ipynb: CNN model trained on melspectogram images for COVID-19 classification
+- cnn_lstm.ipynb: hybrid CNN-LSTM model that first extracts spatial features from melspectograms using a CNN, then feeds temporal sequence of features into an LSTM to capture time-dependent patterns for COVID-19 classification
 ## Results
 
-## Reference?
+## References
+This (paper)[https://link.springer.com/article/10.1007/s10844-022-00707-7] outlines the data proprocessing and augmentation techniques used in our approach. 
