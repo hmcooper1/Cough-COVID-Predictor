@@ -10,11 +10,12 @@ This project uses the [COUGHVID dataset](https://zenodo.org/records/4498364#.Yi8
   - For COVID-19 samples: generate one unaugmented spectogram and two augmented versions through frequency and time masking
   - For healthy samples: generate one unaugmented spectogram and one augmented version through frequency and time masking
 
-Code in data_augmentation folder adapted from [skanderhamdi/attention_cnn_lstm_covid_mel_spectrogram](https://github.com/skanderhamdi/attention_cnn_lstm_covid_mel_spectrogram), with modifications for our project needs.
+Code in data_augmentation folder is adapted from [skanderhamdi/attention_cnn_lstm_covid_mel_spectrogram](https://github.com/skanderhamdi/attention_cnn_lstm_covid_mel_spectrogram), with modifications for our project needs.
 ## Models
 - cnn.ipynb: CNN model trained on melspectogram images for COVID-19 classification
 - cnn_lstm.ipynb: hybrid CNN-LSTM model that first extracts spatial features from melspectograms using a CNN, then feeds temporal sequence of features into an LSTM to capture time-dependent patterns for COVID-19 classification
 ## Results
-
+- CNN: model performance was very good - AUC of 0.97, precision of 0.92, recall of 0.93, and accuracy of 0.93
+- Hybrid CNN-LSTM: model performance was okay - AUC of 0.81, precision of 0.62, recall of 0.85, and accuracy of 0.70
 ## References
 This [paper](https://link.springer.com/article/10.1007/s10844-022-00707-7) outlines the data proprocessing and augmentation techniques used in our approach. 
