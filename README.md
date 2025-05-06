@@ -2,7 +2,7 @@
 ## Overview
 This project uses the [COUGHVID dataset](https://zenodo.org/records/4498364#.Yi8m2RDP1MD) to detect COVID-19 from cough audio recordings. The dataset consists of 25,000+ crowdsourced cough audio samples collected between April 1st, 2020 and December 1st, 2020 through a web application. Each sample is accompanied by self-reported metadata, including COVID-19 status, presence of respiratory symptoms, and demographic information. Melspectograms were used to transform the raw audio signals into an image that is suitable input for convolutional neural networks (CNN). The goal is to develop a model capable of identifying COVID-19 infections from cough audio alone, enabling a low-cost, accessible, and non-invasive method for preliminary screening that could be deployed through mobile devices or web-based platforms.
 ## Data Preprocessing
-- data_cleaning.ipynb: basic data cleaning from metadata
+- [data_cleaning.ipynb](https://nbviewer.org/github/hmcooper1/Cough-COVID-Predictor/blob/main/cnn_lstm.ipynb): basic data cleaning from metadata
 - data_augmentation/1-pitch-shift.py: address class imbalance and enrich dataset
   - For COVID-19 samples: save original audio, generate an augmented sample use PitchShifting (change the original pitch of a sound) from Librosa to shift audio samples down 4 steps
   - For healthy samples: only save original audio
@@ -12,8 +12,8 @@ This project uses the [COUGHVID dataset](https://zenodo.org/records/4498364#.Yi8
 
 Code in data_augmentation folder is adapted from [skanderhamdi/attention_cnn_lstm_covid_mel_spectrogram](https://github.com/skanderhamdi/attention_cnn_lstm_covid_mel_spectrogram), with modifications for our project.
 ## Models
-- cnn.ipynb: CNN model trained on melspectogram images for COVID-19 classification
-- cnn_lstm.ipynb: hybrid CNN-LSTM model that first extracts spatial features from melspectograms using a CNN, then feeds temporal sequence of features into an LSTM to capture time-dependent patterns for COVID-19 classification
+- [cnn.ipynb](https://nbviewer.org/github/hmcooper1/Cough-COVID-Predictor/blob/main/cnn.ipynb): CNN model trained on melspectogram images for COVID-19 classification
+- [cnn_lstm.ipynb](https://nbviewer.org/github/hmcooper1/Cough-COVID-Predictor/blob/main/cnn_lstm.ipynb): hybrid CNN-LSTM model that first extracts spatial features from melspectograms using a CNN, then feeds temporal sequence of features into an LSTM to capture time-dependent patterns for COVID-19 classification
 ## Results
 - CNN: model performance was very good - AUC of 0.97, precision of 0.92, recall of 0.93, and accuracy of 0.93
 - Hybrid CNN-LSTM: model performance was okay - AUC of 0.81, precision of 0.62, recall of 0.85, and accuracy of 0.70
