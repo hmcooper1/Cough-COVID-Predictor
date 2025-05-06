@@ -1,0 +1,6 @@
+.DS_Store
+.ipynb_checkpoints/
+.jupyter/
+Kaggle/
+test_features.pt
+train_features.pt
