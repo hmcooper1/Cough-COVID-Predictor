@@ -7,7 +7,9 @@ This project uses the (COUGHVID dataset)[https://zenodo.org/records/4498364#.Yi8
   - For COVID-19 samples: save original audio, use PitchShifting (lower the original pitch of a sound) from Librosa to shift audio samples down 4 steps
   - For healthy samples: only save original audio
 - data_augmentation/2-melspectogram_augment.py: address class imbalance, enrich dataset, turn raw audio samples into melspectograms
-  - For COVID-19 samples: 
+  - For COVID-19 samples: generate one unaugmented spectogram and two augmented versions through frequency and time masking
+  - For healthy samples: generate one unaugmented spectogram and one augmented version through frequency and time masking
+Code in data_augmentation/1-pitch-shift.py and data_augmentation/2-melspectogram_augment.py adapted from (skanderhamdi/attention_cnn_lstm_covid_mel_spectrogram)[https://github.com/skanderhamdi/attention_cnn_lstm_covid_mel_spectrogram], with modifications for our project needs.
 ## Models
 
 ## Results
