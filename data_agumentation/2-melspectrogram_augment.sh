@@ -7,4 +7,4 @@ cd /rds/general/project/hda_24-25/live/ML/Group14/data_augmentation
 module load anaconda3/personal
 source activate test1
 
-python 2-melspectogram_augment.py
+python 2-melspectrogram_augment.py
